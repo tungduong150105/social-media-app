@@ -27,9 +27,8 @@ import { useUserContext } from '@/context/AuthContext'
 
 const SignupForm = () => {
   const { toast } = useToast()
-  const { checkAuthUser, isLoading: isUserLoading } = useUserContext()
-
   const navigate = useNavigate()
+  const { checkAuthUser, isLoading: isUserLoading } = useUserContext()
 
   const { mutateAsync: createUserAccount, isPending: isCreatingUser } =
     useCreateUserAccount()
@@ -71,7 +70,7 @@ const SignupForm = () => {
 
       navigate('/')
     } else {
-      return toast({ title: 'Sign up failed. Please try again.' })
+      return toast({ title: 'Sign in failed. Please try again.' })
     }
   }
 
